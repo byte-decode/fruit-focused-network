@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pt
+*.npz
+.ipynb_checkpoints/
+/kaggle/
