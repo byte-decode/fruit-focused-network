@@ -1,0 +1,14 @@
+Images per fruit (Good / Bad / Mixed), after exact-duplicate removal:
+  apple          1149   1141    113
+  banana         1113   1087    285
+  guava          1152   1129    148
+  lime           1094   1085      0
+  orange         1216   1159    125
+  pomegranate    5940   1187    125
+Duplicate scan below covers Good + Bad only (Mixed not used yet).
+
+Near-duplicates (DINOv2 cosine >= 0.95):
+  images with a near-duplicate: 11937 / 18452 (64.7%)
+  independent groups: 8812 | largest group: 324
+  nearest-neighbour similarity percentiles 50/90/99: 0.972 / 0.994 / 0.998
+  groups spanning more than one fruit/quality: 3

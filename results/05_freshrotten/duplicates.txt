@@ -1,0 +1,1 @@
+near-duplicates (cosine >= 0.95): 11376 / 13599 images have one; 4226 independent groups; largest group 307

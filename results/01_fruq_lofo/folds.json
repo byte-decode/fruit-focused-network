@@ -1,0 +1,164 @@
+[
+ {
+  "fold": 0,
+  "test": "kaki",
+  "calib": "pear",
+  "train": [
+   "pepper",
+   "papaya",
+   "tomato",
+   "grape",
+   "peach",
+   "banana",
+   "cucumber"
+  ],
+  "n_train": 5688,
+  "n_val": 1004,
+  "n_calib": 1097,
+  "n_test": 1111
+ },
+ {
+  "fold": 1,
+  "test": "pear",
+  "calib": "pepper",
+  "train": [
+   "kaki",
+   "papaya",
+   "tomato",
+   "grape",
+   "peach",
+   "banana",
+   "cucumber"
+  ],
+  "n_train": 6010,
+  "n_val": 1061,
+  "n_calib": 732,
+  "n_test": 1097
+ },
+ {
+  "fold": 2,
+  "test": "pepper",
+  "calib": "papaya",
+  "train": [
+   "kaki",
+   "pear",
+   "tomato",
+   "grape",
+   "peach",
+   "banana",
+   "cucumber"
+  ],
+  "n_train": 6268,
+  "n_val": 1107,
+  "n_calib": 793,
+  "n_test": 732
+ },
+ {
+  "fold": 3,
+  "test": "papaya",
+  "calib": "tomato",
+  "train": [
+   "kaki",
+   "pear",
+   "pepper",
+   "grape",
+   "peach",
+   "banana",
+   "cucumber"
+  ],
+  "n_train": 5199,
+  "n_val": 918,
+  "n_calib": 1990,
+  "n_test": 793
+ },
+ {
+  "fold": 4,
+  "test": "tomato",
+  "calib": "grape",
+  "train": [
+   "kaki",
+   "pear",
+   "pepper",
+   "papaya",
+   "peach",
+   "banana",
+   "cucumber"
+  ],
+  "n_train": 5270,
+  "n_val": 931,
+  "n_calib": 709,
+  "n_test": 1990
+ },
+ {
+  "fold": 5,
+  "test": "grape",
+  "calib": "peach",
+  "train": [
+   "kaki",
+   "pear",
+   "pepper",
+   "papaya",
+   "tomato",
+   "banana",
+   "cucumber"
+  ],
+  "n_train": 5989,
+  "n_val": 1057,
+  "n_calib": 1145,
+  "n_test": 709
+ },
+ {
+  "fold": 6,
+  "test": "peach",
+  "calib": "banana",
+  "train": [
+   "kaki",
+   "pear",
+   "pepper",
+   "papaya",
+   "tomato",
+   "grape",
+   "cucumber"
+  ],
+  "n_train": 6071,
+  "n_val": 1072,
+  "n_calib": 612,
+  "n_test": 1145
+ },
+ {
+  "fold": 7,
+  "test": "banana",
+  "calib": "cucumber",
+  "train": [
+   "kaki",
+   "pear",
+   "pepper",
+   "papaya",
+   "tomato",
+   "grape",
+   "peach"
+  ],
+  "n_train": 6440,
+  "n_val": 1137,
+  "n_calib": 711,
+  "n_test": 612
+ },
+ {
+  "fold": 8,
+  "test": "cucumber",
+  "calib": "kaki",
+  "train": [
+   "pear",
+   "pepper",
+   "papaya",
+   "tomato",
+   "grape",
+   "peach",
+   "banana"
+  ],
+  "n_train": 6016,
+  "n_val": 1062,
+  "n_calib": 1111,
+  "n_test": 711
+ }
+]

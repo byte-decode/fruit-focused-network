@@ -1,0 +1,57 @@
+FruQ leave-one-fruit-out | 9 folds | 7 train fruits, 1 calib, 1 test
+pilot 3 reference (4 training fruits, MobileNetV3): balanced acc 0.480 | recall F/M/R 0.333/0.144/0.963
+
+POOLED over all test fruits (each fruit tested once):
+model                      folds  bal_acc    mF1    acc         rec F/M/R    ECE none/in/unseen unseen>in  AUROC MSP/kNN  acc@rej20 MSP/kNN kNN>MSP
+DINOv2-LP                      9    0.562  0.551  0.586    0.79/0.30/0.59   0.344/0.408/0.160       8/9    0.648/0.550        0.625/0.585     4/9
+DINOv2-LP-balanced             9    0.564  0.551  0.587    0.81/0.29/0.59   0.348/0.402/0.155       8/9    0.639/0.560        0.625/0.592     4/9
+MobileNetV3-FT seed0           9    0.589  0.571  0.654    0.67/0.18/0.92   0.279/0.331/0.366       5/9    0.766/0.727        0.707/0.682     5/9
+
+bal_acc = mean of per-class recall (chance = 0.333). 'unseen>in' = folds where
+calibrating on the held-out fruit gave lower ECE than calibrating on in-domain val.
+'kNN>MSP' = folds where kNN ranked errors better (lower AURC).
+
+DINOv2-LP: confusion (rows true F/M/R, cols predicted)
+[[2307  512   89]
+ [1022  660  522]
+ [ 861  675 2252]]
+  test fruit      acc  bal_acc         rec F/M/R   ECE in/unseen   T in/unseen in-dom val
+  kaki          0.797    0.668    1.00/0.00/1.00    0.200/0.453     0.23/161.71     0.998
+  pear          0.551    0.667    1.00/0.00/1.00    0.440/0.235     0.31/6.58       0.999
+  pepper        0.902    0.333    0.00/0.00/1.00    0.098/0.089     0.01/5.95       1.000
+  papaya        0.670    0.560    0.00/1.00/0.68    0.330/0.223     0.01/8.49       1.000
+  tomato        0.609    0.540    0.93/0.00/0.69    0.390/0.194     0.02/9.02       1.000
+  grape         0.343    0.352    1.00/0.00/0.06    0.651/0.396     0.04/15.56      1.000
+  peach         0.370    0.307    0.72/0.00/0.20    0.627/0.021     0.02/138.23     1.000
+  banana        0.240    0.377    0.46/0.67/0.00    0.729/0.301     0.14/7.41       0.999
+  cucumber      0.720    0.684    0.34/1.00/0.72    0.276/0.210     0.03/2.66       1.000
+
+DINOv2-LP-balanced: confusion (rows true F/M/R, cols predicted)
+[[2349  470   89]
+ [1032  650  522]
+ [ 883  678 2227]]
+  test fruit      acc  bal_acc         rec F/M/R   ECE in/unseen   T in/unseen in-dom val
+  kaki          0.797    0.668    1.00/0.00/1.00    0.198/0.451     0.40/130.29     0.997
+  pear          0.551    0.667    1.00/0.00/1.00    0.443/0.239     0.23/6.67       0.998
+  pepper        0.902    0.333    0.00/0.00/1.00    0.098/0.057     0.23/6.50       0.999
+  papaya        0.671    0.561    0.00/1.00/0.68    0.317/0.220     0.28/8.53       0.999
+  tomato        0.604    0.536    0.93/0.00/0.68    0.397/0.207     0.02/9.64       1.000
+  grape         0.340    0.350    1.00/0.00/0.05    0.659/0.397     0.01/15.92      1.000
+  peach         0.385    0.321    0.76/0.00/0.20    0.591/0.031     0.16/106.55     0.999
+  banana        0.302    0.431    0.73/0.56/0.00    0.646/0.238     0.28/7.16       0.998
+  cucumber      0.669    0.619    0.24/1.00/0.62    0.319/0.197     0.14/2.67       0.999
+
+MobileNetV3-FT seed0: confusion (rows true F/M/R, cols predicted)
+[[1952  136  820]
+ [ 756  395 1053]
+ [  68  250 3470]]
+  test fruit      acc  bal_acc         rec F/M/R   ECE in/unseen   T in/unseen in-dom val
+  kaki          0.797    0.667    1.00/0.00/1.00    0.189/0.463     1.01/570159.62    0.997
+  pear          0.091    0.333    0.00/0.00/1.00    0.907/0.897     0.54/0.86       0.998
+  pepper        0.902    0.333    0.00/0.00/1.00    0.074/0.067     0.85/1.09       0.998
+  papaya        0.836    0.667    0.00/1.00/1.00    0.164/0.342     0.04/5.39       1.000
+  tomato        0.757    0.643    0.93/0.00/1.00    0.243/0.328     0.01/16.62      1.000
+  grape         0.406    0.333    0.00/0.00/1.00    0.594/0.590     0.35/0.83       0.999
+  peach         0.826    0.886    1.00/1.00/0.66    0.160/0.084     0.25/1.34       0.999
+  banana        0.848    0.687    0.97/0.09/1.00    0.110/0.392     0.86/5.88       0.996
+  cucumber      0.352    0.333    1.00/0.00/0.00    0.648/0.496     0.01/2.40       1.000

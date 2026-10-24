@@ -1,0 +1,19 @@
+FruitNet Good vs Bad, 18452 images. Balanced accuracy (chance = 0.500).
+Classifier: frozen DINOv2-small + logistic regression (border-colour: colour histogram only).
+
+input the model sees  random   group    LOFO       lime  banana   guava  orange   apple pomegra
+full                 0.996   0.996   0.863      0.979   0.520   0.959   0.911   0.829   0.981
+background-60        0.967   0.944   0.778      0.676   0.582   0.945   0.733   0.802   0.928
+background-75        0.942   0.939   0.740      0.663   0.544   0.908   0.674   0.790   0.864
+centre-60            0.996   0.995   0.865      0.968   0.655   0.910   0.936   0.743   0.977
+border-colour        0.788   0.849   0.707      0.389   0.748   0.917   0.681   0.660   0.844
+
+random / group = standard evaluation, all 6 fruits in training (group = near-duplicates kept
+on one side). LOFO = mean over leave-one-fruit-out folds; per-fruit columns = the test fruit.
+
+Recall Good/Bad, standard-group split:
+  full              0.994/0.997
+  background-60     0.968/0.919
+  background-75     0.952/0.925
+  centre-60         0.996/0.994
+  border-colour     0.945/0.754

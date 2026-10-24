@@ -1,0 +1,6 @@
+Fruit area (share of photo) from CLIPSeg masks, mean per fruit:
+  fruit           Good     Bad    low-confidence masks
+  apple          0.541   0.562                       5
+  banana         0.456   0.312                      62
+  orange         0.612   0.512                       0
+(low-confidence = CLIPSeg never reached the threshold; fallback mask used)

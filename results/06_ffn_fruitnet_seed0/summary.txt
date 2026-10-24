@@ -1,0 +1,15 @@
+fruitnet Good vs Bad. Balanced accuracy (chance 0.500). MobileNetV3-Large, seed 0.
+natural = ordinary test photos; swapped = test fruit on an opposite-class background;
+flip = share of predictions that change when only the background changes (lower is better).
+
+variant     std nat  std swp std flip  LOFO nat  LOFO swp LOFO flip      apple  banana   guava    lime  orange pomegra   (LOFO natural per fruit)
+baseline      0.997    0.751    0.199     0.854     0.705     0.240      0.839   0.560   0.978   0.935   0.819   0.991
+FFN           0.996    0.990    0.006     0.870     0.827     0.110      0.764   0.775   0.930   0.871   0.903   0.979
+BS-only       0.996    0.988    0.013     0.874     0.810     0.122      0.756   0.827   0.897   0.974   0.806   0.985
+AP-only       1.000    0.774    0.188     0.856     0.721     0.193      0.809   0.549   0.987   0.892   0.905   0.994
+
+LOFO swapped per fruit:
+  baseline      apple 0.703   banana 0.590    guava 0.750     lime 0.802   orange 0.585  pomegra 0.797
+  FFN           apple 0.765   banana 0.770    guava 0.825     lime 0.765   orange 0.861  pomegra 0.975
+  BS-only       apple 0.747   banana 0.848    guava 0.757     lime 0.767   orange 0.765  pomegra 0.974
+  AP-only       apple 0.770   banana 0.522    guava 0.761     lime 0.752   orange 0.627  pomegra 0.896

@@ -1,0 +1,20 @@
+FruitNet Good vs Bad, 18452 images. Balanced accuracy (chance = 0.500).
+
+model               input              group   LOFO       lime  banana   guava  orange   apple pomegra
+DINOv2-LP           full               0.996  0.863      0.979   0.520   0.959   0.911   0.829   0.981
+DINOv2-LP           fruit-only         0.970  0.785      0.863   0.484   0.806   0.898   0.705   0.955
+DINOv2-LP           background-only    0.907  0.733      0.532   0.595   0.900   0.807   0.733   0.828
+LogReg (5 numbers)  mask-geometry      0.578  0.513      0.472   0.315   0.600   0.515   0.444   0.732
+MobileNetV3-FT      full                   -  0.868      0.975   0.611   0.970   0.864   0.804   0.985
+MobileNetV3-FT      fruit-only             -  0.811      0.754   0.616   0.840   0.852   0.824   0.979
+
+group = all 6 fruits in training, near-duplicates kept on one side (honest split).
+LOFO = leave-one-fruit-out mean; per-fruit columns = the unseen test fruit.
+
+Recall Good/Bad per unseen fruit:
+  DINOv2-LP          full            lime 0.99/0.96  banan 0.06/0.98  guava 0.92/1.00  orang 0.96/0.86  apple 0.67/0.99  pomeg 0.97/0.99
+  DINOv2-LP          fruit-only      lime 0.99/0.73  banan 0.14/0.83  guava 0.61/1.00  orang 0.97/0.83  apple 0.41/1.00  pomeg 0.94/0.97
+  DINOv2-LP          background-only lime 0.29/0.77  banan 0.41/0.78  guava 0.91/0.89  orang 0.86/0.75  apple 0.70/0.77  pomeg 0.94/0.71
+  LogReg (5 numbers) mask-geometry   lime 0.87/0.08  banan 0.55/0.08  guava 0.94/0.26  orang 0.89/0.14  apple 0.64/0.25  pomeg 0.70/0.76
+  MobileNetV3-FT     full            lime 0.99/0.96  banan 0.29/0.93  guava 0.96/0.98  orang 0.98/0.75  apple 0.61/1.00  pomeg 0.99/0.97
+  MobileNetV3-FT     fruit-only      lime 1.00/0.51  banan 0.28/0.95  guava 0.69/0.99  orang 0.88/0.83  apple 0.69/0.95  pomeg 0.97/0.99
